@@ -12,27 +12,23 @@
     <div class="container">
       <h2><i class="fas fa-walking fa-2x"></i>  Running Machine</h2><br>
         <h4 class="meta">Meta Semanal</h4>      
-        <h1 id="balance" class="balance"> 150 min</h1>
+        <h1 id="metaSemanal" class="metaSemanal"></h1>
 
         <div class="painel-receitas-despesas">
             <div>
             <h4 class="receitas">Acumulado</h4> 
-            <p id="money-plus" class="money plus">120 min</p> 
+            <p id="acumulado" class="money plus">120 min</p> 
             </div>
 
             <div>
             <h4 class="despesas">Restante</h4>
-            <p id="money-minus" class="money minus">30 min</p>
+            <p id="restante" class="money minus">30 min</p>
             </div>
         </div>
 
       <h3 class="no-print">Minha Semana</h3>
       
-      <ul id="transactions" class="transactions">
-        <li>Segunda<span>20 min</span><button class="delete-btn">x</button> </li>
-        <li>Terça<span>20 min</span><button class="delete-btn">x</button> </li>
-        <li>Quarta<span>20 min</span><button class="delete-btn">x</button> </li>
-      </ul>
+      <ul id="registros" class="registros"></ul>
 
       <h3 class="no-print">Cadastrar</h3>
       
@@ -52,8 +48,8 @@
         </div>
 
         <div class="form-control">
-          <label for="amount">Duração <br /></label>
-          <input type="number"  id="amount" placeholder="Duração do exercício em minutos"/>
+          <label for="duracao">Duração <br /></label>
+          <input type="number"  id="duracao" placeholder="Duração do exercício em minutos"/>
         </div>
 
         <button class="btn">Adicionar</button>         

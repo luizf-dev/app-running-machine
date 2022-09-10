@@ -169,13 +169,13 @@ select{
   outline: 0;
 }
 
-.transactions {
+.registros {
   list-style-type: none;
   padding: 5px;
   margin-bottom: 40px;
 }
 
-.transactions li {
+.registros li {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   color: #000;
@@ -186,16 +186,6 @@ select{
   padding: 10px;
   margin: 10px 0;
   padding-left: 50px;
-}
-
-.transactions li.plus {
-  border-right: 10px solid #103900;
-  background: #63c98d;
-}
-
-.transactions li.minus {
-  border-right: 10px solid red;
-  background: #c08881;
 }
 
 .delete-btn {
@@ -213,7 +203,7 @@ select{
   
 }
 
-.transactions li:hover .delete-btn {
+.registros li:hover .delete-btn {
   opacity: 1;
 }
 
