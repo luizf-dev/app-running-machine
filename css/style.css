@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  width: 50%;
+  border: 2px solid #000;
+  padding: 20px;
+  height: 100vh auto;
+  background: #fff;
+}
+
+h2,h3,h4,label{
+  color: #e57373;
+  font-weight: 900;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 1.4em;
+}
+
+
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+  color: #2ecc71;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.saldo-atual-negativo{
+  color: red;
+}
+
+h2{
+  text-align: center;
+}
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 20px 0 5px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.painel-receitas-despesas {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  border: 1px solid #000;
+}
+
+.painel-receitas-despesas > div {
+  flex: 1;
+  text-align: center;
+}
+
+.painel-receitas-despesas > div:first-of-type {
+  border-right: 3px solid #000;
+}
+
+.money {
+  font-size: 1em;
+  letter-spacing: 1px;
+  margin: 2px 0;
+}
+
+.money.plus {
+  color: #1565c0;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 1px #000;
+  font-weight: 900;
+}
+
+.money.minus {
+  color: #c0392b;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 1px #000;
+  font-weight: 900;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #dedede;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  color: rgb(95, 92, 92);
+  font-weight: 900;
+}
+
+input:focus{
+  outline: none;
+  font-size: 1.2em;
+}
+
+select{
+    width: 100%;
+    outline: none;
+    font-size: 1.2em;
+    border: 1px solid #dedede;
+    display: block;
+    padding: 10px;
+    color: #000;
+    font-weight: 900;    
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #2ecc71;
+  box-shadow: var(--box-shadow);
+  color: #000;
+  border: 0;
+  display: block;
+  font-size: 1.3em;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+  font-weight: 900;
+}
+
+.btn-print{
+  cursor: pointer;
+  background-color: #2ecc71;
+  box-shadow: var(--box-shadow);
+  color: #000;
+  border: 0;
+  display: block;
+  font-size: 1.3em;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+  font-weight: 900;
+}
+
+.btn:hover, .btn-print:hover{
+  background: #103900;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+.transactions {
+  list-style-type: none;
+  padding: 5px;
+  margin-bottom: 40px;
+}
+
+.transactions li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #000;
+  font-weight: 900;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+  padding-left: 50px;
+}
+
+.transactions li.plus {
+  border-right: 10px solid #103900;
+  background: #63c98d;
+}
+
+.transactions li.minus {
+  border-right: 10px solid red;
+  background: #c08881;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: red;
+  border: 0;
+  color: #000;
+  font-size: 1.3em;
+  line-height: 36px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  
+}
+
+.transactions li:hover .delete-btn {
+  opacity: 1;
+}
+
+@media (max-width: 768px){
+
+  .container{
+    width: 100%;    
+    position: absolute;
+    top: 0;
+  }
+
+  .btn:hover, .btn-print:hover{
+    background: #2ecc71;
+  }
+
+
+h3,h4,label{
+    color: #e57373;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 1em;
+  }
+}
