@@ -1,0 +1,134 @@
+/*==========Modal Inicio============*/
+.modal{
+    position: fixed;
+    top:15%;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: #00000090;
+    opacity: 0;
+    z-index: -1;
+    box-shadow: 5px 3px 3px #000;
+    transition: all 1s ease;
+}
+
+.modal.active{
+    opacity: 1;
+    z-index: 1;
+}
+
+.modal-title{
+    text-shadow: 2px 1px 1px #000;
+    color: #e57373;
+    font-weight: 900;
+    line-height: 10px;
+}
+
+.msg-modal{
+    font-size: 1.3em;
+    color: #fff;
+}
+
+.msg-winner{
+    text-align: center;
+}
+
+h6 i{
+    color: #e57373;
+    text-shadow: 2px 2px 2px #000;
+}
+
+
+
+.modal-close{
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    color: #000;
+    background-color: #e57373;
+}
+
+.modal-close:hover{
+    background-color: #e57373;
+    color: white;
+}
+
+
+.modal-footer{
+    background-color: inherit;
+    text-align: right;
+    padding: 0 20px;
+}
+
+.modal-button{
+    border-style: none;
+    height: 40px;
+    padding: 6px 12px;
+    margin-bottom: 5px;
+    background-color: #e57373;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: box-shadow .6s ease;
+    box-shadow: 5px 3px 3px #000;
+    font-weight: 900;
+    text-shadow: 2px 1px 1px #000;
+}
+
+button.red{
+    background-color: #e57373;
+}
+/*==========Modal Fim=====================*/
+
+
+/*==========Modal Sucesso Inicio============*/
+.modal-content-success{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width: 40vw;
+    margin: 20vh auto;
+    padding-bottom: 20px;
+    background: rgb(31, 29, 29);
+    box-shadow: 1px 1px 10px black;
+  }
+  
+  .modal-header-success{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1rem;
+    background: #000;
+    color: #fff;
+  }
+  
+  .modal-body-success{
+    padding: 20px;
+    color: green;    
+  }
+  /*==========Modal Sucesso Fim============*/
+  
+
+  @media (max-width:480px){
+    .modal{
+        top:100%;
+        transition: all 1s ease;
+    }
+
+    .modal.active{
+        top:25%;
+    }
+
+    .modal-content-success{
+        margin:0;
+        width:100%;
+        position:fixed;
+    }
+}

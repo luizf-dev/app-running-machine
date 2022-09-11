@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
-:root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -21,7 +15,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 50%;
+  width: 40%;
   border: 2px solid #000;
   padding: 20px;
   height: 100vh auto;
@@ -35,16 +29,11 @@ h2,h3,h4,label{
   font-size: 1.4em;
 }
 
-
 h1 {
   letter-spacing: 1px;
   margin: 0;
-  color: #2ecc71;
-  text-shadow: 1px 1px 1px #000;
-}
-
-.saldo-atual-negativo{
-  color: red;
+  color: green;
+  font-size: 1.4em;
 }
 
 h2{
@@ -59,10 +48,9 @@ h3 {
 
 h4 {
   margin: 0;
-  text-transform: uppercase;
 }
 
-.painel-receitas-despesas {
+.painel{
   background-color: #fff;
   padding: 20px;
   display: flex;
@@ -71,12 +59,12 @@ h4 {
   border: 1px solid #000;
 }
 
-.painel-receitas-despesas > div {
+.painel > div {
   flex: 1;
   text-align: center;
 }
 
-.painel-receitas-despesas > div:first-of-type {
+.painel > div:first-of-type {
   border-right: 3px solid #000;
 }
 
@@ -86,14 +74,14 @@ h4 {
   margin: 2px 0;
 }
 
-.money.plus {
+.acumulado {
   color: #1565c0;
   font-size: 1.3em;
   text-shadow: 1px 1px 1px #000;
   font-weight: 900;
 }
 
-.money.minus {
+.restante {
   color: #c0392b;
   font-size: 1.3em;
   text-shadow: 1px 1px 1px #000;
@@ -112,7 +100,7 @@ input[type='number'] {
   font-size: 16px;
   padding: 10px;
   width: 100%;
-  color: rgb(95, 92, 92);
+  color: #000;
   font-weight: 900;
 }
 
@@ -129,12 +117,13 @@ select{
     display: block;
     padding: 10px;
     color: #000;
+    background-color: #fff;
     font-weight: 900;    
 }
 
 .btn {
   cursor: pointer;
-  background-color: #2ecc71;
+  background-color: #e57373;
   box-shadow: var(--box-shadow);
   color: #000;
   border: 0;
@@ -146,22 +135,9 @@ select{
   font-weight: 900;
 }
 
-.btn-print{
-  cursor: pointer;
-  background-color: #2ecc71;
-  box-shadow: var(--box-shadow);
-  color: #000;
-  border: 0;
-  display: block;
-  font-size: 1.3em;
-  margin: 10px 0 30px;
-  padding: 10px;
-  width: 100%;
-  font-weight: 900;
-}
 
-.btn:hover, .btn-print:hover{
-  background: #103900;
+.btn:hover{
+  background: #c0392b;
 }
 
 .btn:focus,
@@ -190,21 +166,17 @@ select{
 
 .delete-btn {
   cursor: pointer;
-  background-color: red;
+  background-color: #e57373;
   border: 0;
   color: #000;
-  font-size: 1.3em;
-  line-height: 36px;
+  font-size: 1.8em;
+  font-weight: 900;
+  line-height: 35px;
   padding: 2px 5px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 36px;
-  
-}
-
-.registros li:hover .delete-btn {
-  opacity: 1;
+  width: 36px;  
 }
 
 @media (max-width: 768px){
@@ -213,10 +185,6 @@ select{
     width: 100%;    
     position: absolute;
     top: 0;
-  }
-
-  .btn:hover, .btn-print:hover{
-    background: #2ecc71;
   }
 
 

@@ -1,3 +1,21 @@
+//=============ATIVAR MODAL DE SUCESSO NA GRAVAÇÃO DOS DADOS==================
+const openModalSuccess = () => document.getElementById('modalSuccess').classList.add('active')
+
+const closeModalSuccess = () => {
+    document.getElementById('modalSuccess').classList.remove('active');
+}
+//==================================================================
+
+
+//=============== EVENTOS DE CLICK DOS BOTÕES SUCCESS
+document.getElementById('modalCloseSuccess')
+   .addEventListener('click', closeModalSuccess)
+
+document.getElementById('cancelarModalSuccess')
+    .addEventListener('click', closeModalSuccess)
+//==============================================
+
+
 const registrosUl = document.querySelector('#registros');
 const metaSemana = document.querySelector('#metaSemanal');
 const listarAcumulado = document.querySelector('#acumulado');
@@ -7,17 +25,11 @@ const inputDiaSemana = document.querySelector('#dia');
 const inputDuracao = document.querySelector('#duracao');
 
 
-const testeMetaSemanal = [
-    {id: 1, meta: 150}
-]
-
-
-const testeValores = [
-    {id: 1, name: 'Segunda', duracao: 20},
-    {id: 2, name: 'Terça', duracao: 30},
-    {id: 3, name: 'Quarta', duracao: 25},
-    {id: 4, name: 'Quinta', duracao: 35}
-]
+//===================================================================================*
+//Meta semanal armazenada de forma estática por enquanto                             *
+const testeMetaSemanal = [                                       
+    {id: 1, meta: 120}                                           
+]                                                                   
 
 //adiciona meta semamal ao dom
 const addmetaSemanal = valor =>{
@@ -35,28 +47,41 @@ const initMetaSemanal = () => {
 }
 
 initMetaSemanal();
+//=====================================================================================
 
 
+
+//Armazena no localStorage do navegador
+const localStorageValores = JSON.parse(localStorage.getItem('valores')); 
+let valores = localStorage.getItem('valores') !== null ? localStorageValores : [];
+
+//Remove os valores da tela
+const removeValores = ID => {
+    valores = valores.filter(valor => valor.id !== ID);
+    atualizarLocalStorage();
+    init();
+}
 
 //Adiciona o valores ao DOM
 const addValoresDom = valores => {
 
     const li = document.createElement('li');
     li.innerHTML = `
-        ${valores.name} <span>${valores.duracao} minutos</span><button class="delete-btn">x</button>     
-    
+        ${valores.name}
+        <span>${valores.duracao} minutos</span>
+        <button class="delete-btn" onClick="removeValores(${valores.id})">x</button>         
     `
     registrosUl.append(li);
 }
 
 const atualizaRegistros = () => {
-    const valoresDuracao = testeValores.map(valores => valores.duracao);
+    const valoresDuracao = valores.map(valores => valores.duracao);
     const totalMinutos = valoresDuracao.reduce((accumulator, valores ) => accumulator + valores, 0 );
     const metaDuracao = testeMetaSemanal.map(valor => valor.meta);
     const restante = metaDuracao - totalMinutos;
 
     if(restante == 0){
-        alert('Parabéns! Você atingiu a meta da semana!!');
+        openModalSuccess();
     }
 
     metaSemana.textContent = `${metaDuracao} min`;
@@ -67,24 +92,54 @@ const atualizaRegistros = () => {
 
 //quando a página for carregada faz o loop nos regitros e  adiciona no DOM
 const init = () => {
-    testeValores.forEach(addValoresDom);
+    registrosUl.innerHTML = '';
+    valores.forEach(addValoresDom);
     atualizaRegistros();
 }
 
 init();
 
-form.addEventListener('submit', event => {
+//Atualiza os registros no localStorage
+const atualizarLocalStorage = () => {
+    localStorage.setItem('valores', JSON.stringify(valores));
+}
+
+
+//Gera um id com um número aleatório para o valor
+const gerarID = () => Math.round(Math.random() * 1000);
+
+
+//Adiciona os valores em um novo array
+const addToArray = (diaNome, duracaoNome) =>{
+    valores.push({id: gerarID(), name: diaNome, duracao: Number(duracaoNome)});
+
+}
+
+//Limpar os inputs após o cadastro dos valores
+cleanInputs = () => {
+     inputDiaSemana.value = '';
+     inputDuracao.value = '';
+}
+
+//Função para envio do form 
+const formSubmit =  event => {
 
     event.preventDefault();
 
     const diaNome = inputDiaSemana.value.trim();
-    const duracaoNome = inputDuracao.value.trim();
-    
+    const duracaoNome = inputDuracao.value.trim();    
+    emptyInputs = diaNome === '' || duracaoNome === '';
 
-    if(diaNome === '' || duracaoNome === ''){
+    if(emptyInputs){
         alert('Digite todos os campos!');
         return;
     }
 
+    addToArray(diaNome, duracaoNome);
+    init();
+    atualizarLocalStorage();
+    cleanInputs();
+   
+}
 
-})
+form.addEventListener('submit', formSubmit);

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <title>Running Machine</title>
   </head>
@@ -14,29 +15,29 @@
         <h4 class="meta">Meta Semanal</h4>      
         <h1 id="metaSemanal" class="metaSemanal"></h1>
 
-        <div class="painel-receitas-despesas">
+        <div class="painel">
             <div>
-            <h4 class="receitas">Acumulado</h4> 
-            <p id="acumulado" class="money plus">120 min</p> 
+            <h4>Acumulado</h4> 
+            <p id="acumulado" class="acumulado">120 min</p> 
             </div>
 
             <div>
-            <h4 class="despesas">Restante</h4>
-            <p id="restante" class="money minus">30 min</p>
+            <h4>Restante</h4>
+            <p id="restante" class="restante">30 min</p>
             </div>
         </div>
 
-      <h3 class="no-print">Minha Semana</h3>
+      <h3>Minha Semana</h3>
       
       <ul id="registros" class="registros"></ul>
 
-      <h3 class="no-print">Cadastrar</h3>
+      <h3>Cadastrar</h3>
       
       <form id="form">
         <div class="form-control">
           <label for="text">Dia da Semana</label>
           <select name="dia" id="dia" class="form-control">
-            <option value="---">Selecione o Dia</option>
+            <option value="">Selecione o Dia</option>
             <option value="Seg">Segunda</option>
             <option value="Ter">Terça</option>
             <option value="Qua">Quarta</option>
@@ -55,6 +56,26 @@
         <button class="btn">Adicionar</button>         
       </form>
     </div>
+     <!--****************Modal de sucesso inicio****************************-->
+     <div class="modal" id="modalSuccess">
+      <div class="modal-content-success">
+          <header class="modal-header-success">
+              <h2 class="modal-title">Parabéns!!</h2>
+              <span class="modal-close" id="modalCloseSuccess">&#10006;</span>
+          </header>
+          <div class="msg-winner modal-body-success">
+            <h6><i class="wiiner fas fa-trophy fa-7x"></i></h6>
+             <h5 class="msg-modal">
+                Você atingiu a sua meta semanal de exercícios!
+              </h5>
+              
+          </div>
+          <footer class="modal-footer">
+              <button id="cancelarModalSuccess" class="modal-button green">OK</button>
+          </footer>
+      </div>
+  </div>
+  <!--****************Modal de sucesso fim****************************-->
     <script src="js/main.js"></script>
   </body>
 </html>
