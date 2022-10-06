@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <title>Running Machine</title>
+  </head>
+  <body> 
+    <div class="container" id="container-metaSemanal">
+      <h2><i class="fas fa-walking fa-2x"></i>  Running Machine</h2><br>
+
+      <h3>Cadastre sua meta semanal</h3>
+      
+      <form id="formMetaSemanal">
+        <div class="form-control">
+          <input type="number"  id="inputMetaSemanal" placeholder="Sua meta semanal em minutos"/>
+        </div>
+        <button class="btn" id="btnCadMeta" type="submit">Cadastrar</button> 
+        <button class="btn" onclick="history.back();" type="submit">Voltar</button>           
+      </form>
+    </div>
+    <script src="js/metaSemanal.js"></script>
+  </body>
+</html>

@@ -12,45 +12,59 @@
   <body> 
     <div class="container">
       <h2><i class="fas fa-walking fa-2x"></i>  Running Machine</h2><br>
-        <h4 class="meta">Meta Semanal</h4>      
-        <h1 id="metaSemanal" class="metaSemanal"></h1>
-
+        
+        <h1 id="msg"></h1>
         <div class="painel">
             <div>
-            <h4>Acumulado</h4> 
-            <p id="acumulado" class="acumulado">120 min</p> 
+              <h4 class="meta">Meta</h4>
+              <ul class="metaSemanal" id="metaSemanal"></ul>
             </div>
 
             <div>
-            <h4>Restante</h4>
-            <p id="restante" class="restante">30 min</p>
+              <h4>Acumulado</h4> 
+              <p id="acumulado" class="acumulado"></p> 
             </div>
         </div>
 
-      <h3>Minha Semana</h3>
-      
-      <ul id="registros" class="registros"></ul>
+        <div class="painel">
+            <div>
+              <h4>Pendente</h4> 
+              <p id="restante" class="restante"></p>
+              <p id="metaZerada" class="metaZerada"></p>            
+            </div>
 
-      <h3>Cadastrar</h3>
+            <div>
+            <h4>Saldo +</h4>
+            <p id="saldoPositivo" class="saldoPositivo"></p>
+            </div>
+        </div>
+        <a href="metaSemanal.html"><button class="btn"><i class="fas fa-plus-circle fa-1x"></i> Defina sua meta</button></a>
+        <button class="btn" onclick="removeMeta();"><i class="fas fa-trash-alt fa-1x"></i> Deletar meta</button>
+
+      <h3>Minha Semana</h3>
+       <ul id="duracao" class="duracao"></ul>
+      
+     
+
+      <h3>Cadastrar dia da semana</h3>
       
       <form id="form">
         <div class="form-control">
-          <label for="text">Dia da Semana</label>
           <select name="dia" id="dia" class="form-control">
             <option value="">Selecione o Dia</option>
-            <option value="Seg">Segunda</option>
-            <option value="Ter">Terça</option>
-            <option value="Qua">Quarta</option>
-            <option value="Qui">Quinta</option>
-            <option value="Sex">Sexta</option>
-            <option value="Sab">Sábado</option>
-            <option value="Dom">Domingo</option>
+            <option value="Segunda">Segunda</option>
+            <option value="Terça">Terça</option>
+            <option value="Quarta">Quarta</option>
+            <option value="Quinta">Quinta</option>
+            <option value="Sexta">Sexta</option>
+            <option value="Sábado">Sábado</option>
+            <option value="Domingo">Domingo</option>
         </select>
         </div>
 
         <div class="form-control">
           <label for="duracao">Duração <br /></label>
-          <input type="number"  id="duracao" placeholder="Duração do exercício em minutos"/>
+          <input type="number"  id="diaDuracao" placeholder="Duração do exercício em minutos"/>
         </div>
 
         <button class="btn">Adicionar</button>         

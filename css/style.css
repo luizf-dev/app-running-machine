@@ -22,6 +22,19 @@ body {
   background: #000;
 }
 
+#container-metaSemanal {
+  margin: 0 auto;
+  width: 40%;
+  border: 2px solid #000;
+  padding: 20px;
+  height: 100vh;
+  background: #000;
+}
+
+a{
+  text-decoration: none;
+}
+
 h2,h3,h4,label{
   color: #e57373;
   font-weight: 900;
@@ -32,8 +45,10 @@ h2,h3,h4,label{
 h1 {
   letter-spacing: 1px;
   margin: 0;
-  color: green;
-  font-size: 1.4em;
+  color: #e57373;
+  font-size: 1.1em;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
 }
 
 h2{
@@ -49,6 +64,7 @@ h3 {
 h4 {
   margin: 0;
 }
+
 
 .painel{
   background-color: #fff;
@@ -68,17 +84,31 @@ h4 {
   border-right: 3px solid #000;
 }
 
-.money {
-  font-size: 1em;
-  letter-spacing: 1px;
-  margin: 2px 0;
+.painel h4 a{
+  color: #e57373;
 }
 
-.acumulado {
+
+#metaSemanal{
+   margin-right: 100px;
+}
+
+.acumulado, .saldoPositivo, .metaZerada {
   color: #1565c0;
   font-size: 1.3em;
   text-shadow: 1px 1px 1px #000;
   font-weight: 900;
+}
+
+.metaSemanal {
+  color: darkgreen;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px #000;
+  font-weight: 900;
+  width: 20px;
+  height: 10px;
+  margin: 10px 45px;
+
 }
 
 .restante {
@@ -123,16 +153,26 @@ select{
 
 .btn {
   cursor: pointer;
-  background-color: #e57373;
+  background-color: red;
   box-shadow: var(--box-shadow);
   color: #000;
   border: 0;
   display: block;
   font-size: 1.3em;
-  margin: 10px 0 30px;
+  margin: 20px 0 20px;
   padding: 10px;
   width: 100%;
   font-weight: 900;
+}
+
+.btn-meta{
+  cursor: pointer;
+  background-color: #e57373;
+  box-shadow: var(--box-shadow);
+  color: #000;
+  border: 0;
+  font-size: 1.3em;
+  border-radius: 5px;
 }
 
 
@@ -145,13 +185,15 @@ select{
   outline: 0;
 }
 
-.registros {
+ ul {
   list-style-type: none;
-  padding: 5px;
+  padding: 4px;
   margin-bottom: 40px;
 }
 
-.registros li {
+
+
+.duracao li {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   color: #000;
@@ -171,7 +213,7 @@ select{
   color: #000;
   font-size: 1.8em;
   font-weight: 900;
-  line-height: 35px;
+  line-height: 39px;
   padding: 2px 5px;
   position: absolute;
   top: 0;
@@ -193,5 +235,22 @@ h3,h4,label{
     font-weight: 900;
     text-shadow: 1px 1px 1px #000;
     font-size: 1em;
+  }
+
+  .acumulado, .saldoPositivo, .metaZerada, .metaSemanal, .restante {
+    font-size: 1em;
+  }
+
+  .metaSemanal p {
+  color: darkgreen;
+  font-size: 1.1em;
+  text-shadow: 1px 1px 1px #000;
+  font-weight: 900;
+  margin: 5px 0;
+}
+
+    #container-metaSemanal {
+    margin: 0 auto;
+    width: 100%;
   }
 }
