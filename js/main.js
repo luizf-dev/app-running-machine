@@ -74,9 +74,11 @@ const addMetaDOM = valorMeta => {
     }
 
     metaSemanalUL.append(li);
+    
 }
 
 initMetaSemanal();
+
 
 /* 
 ! ==================================*/
