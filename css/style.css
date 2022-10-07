@@ -68,7 +68,7 @@ h4 {
 
 .painel{
   background-color: #fff;
-  padding: 20px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
@@ -88,11 +88,6 @@ h4 {
   color: #e57373;
 }
 
-
-#metaSemanal{
-   margin-right: 100px;
-}
-
 .acumulado, .saldoPositivo, .metaZerada {
   color: #1565c0;
   font-size: 1.3em;
@@ -107,8 +102,7 @@ h4 {
   font-weight: 900;
   width: 20px;
   height: 10px;
-  margin: 10px 45px;
-
+  margin: 5px 15px;
 }
 
 .restante {
@@ -191,8 +185,6 @@ select{
   margin-bottom: 40px;
 }
 
-
-
 .duracao li {
   background-color: #fff;
   box-shadow: var(--box-shadow);
@@ -246,7 +238,6 @@ h3,h4,label{
   font-size: 1.1em;
   text-shadow: 1px 1px 1px #000;
   font-weight: 900;
-  margin: 5px 0;
 }
 
     #container-metaSemanal {

@@ -78,7 +78,6 @@ const addMetaDOM = valorMeta => {
 
 initMetaSemanal();
 
-//<button class="btn"  onclick="removeMeta()">X</button>
 /* 
 ! ==================================*/
 
@@ -126,7 +125,7 @@ const updateValues = () => {
        h1.innerHTML = `Seja bem-vindo! `;
        msg.append(h1);
     }else if(totalAcumulado >= metaValores ){
-        alert("Parabéns! Você completou sua meta!");
+        openModalSuccess();
     }
 
     acumulado.textContent = `${totalAcumulado} min`;    

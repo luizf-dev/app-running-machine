@@ -1,7 +1,7 @@
 /*==========Modal Inicio============*/
 .modal{
     position: fixed;
-    top:15%;
+    top: 0;
     left:0;
     width: 100%;
     height: 100%;
@@ -9,7 +9,7 @@
     opacity: 0;
     z-index: -1;
     box-shadow: 5px 3px 3px #000;
-    transition: all 1s ease;
+    transition: all 0.7s ease;
 }
 
 .modal.active{
@@ -26,7 +26,7 @@
 
 .msg-modal{
     font-size: 1.3em;
-    color: #fff;
+    color: #bb9457;
 }
 
 .msg-winner{
@@ -34,7 +34,7 @@
 }
 
 h6 i{
-    color: #e57373;
+    color: #bb9457;
     text-shadow: 2px 2px 2px #000;
 }
 

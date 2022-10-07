@@ -28,6 +28,7 @@ form.addEventListener('submit', evento =>{
     localStorage.setItem('metaSemanal', JSON.stringify(metaSemanal));
     cleanInput();
     history.back();
+    location.reload();
 })
 
 
