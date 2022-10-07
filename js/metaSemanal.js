@@ -27,7 +27,7 @@ form.addEventListener('submit', evento =>{
     const metaSemanal = [{id: generateID(), metaDuracao: metaSemanalName}];
     localStorage.setItem('metaSemanal', JSON.stringify(metaSemanal));
     cleanInput();
-    window.location.href("https://luizf-dev.github.io/app-running-machine/");
+    history.back('-1');
     
 })
 
